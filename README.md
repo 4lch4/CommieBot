@@ -1,0 +1,2 @@
+# CommieBot
+A bot idea that a friend of mine came up with. Runs a server in such a way that there are no individuals in control of the server but rather member consensus is required for all actions. Consensus is met using this bot.
