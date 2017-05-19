@@ -1,0 +1,18 @@
+{
+  "name": "commie",
+  "version": "0.0.1",
+  "description": "Our bot for commies.",
+  "main": "Commie.js",
+  "author": "Alcha",
+  "license": "GPL-3.0",
+  "dependencies": {
+      "eris": "^0.7.0",
+      "moment-timezone": "~0.5.13",
+      "redis": "~2.7.1",
+      "chance": "~1.0.8"
+  },
+  "scripts": {
+    "update": "npm update",
+    "start": "node Commie.js"
+  }
+}

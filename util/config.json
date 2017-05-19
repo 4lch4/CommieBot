@@ -1,0 +1,18 @@
+{
+    "token": "MzE0OTc5MjA0NDc3MzUzOTg2.DAACzA.GwYDETKXbRfqqUoxlRX86XtoZ_o",
+    "shardCount": "1",
+    "simpleLog": "no",
+    "adminids": ["219270060936527873", "139474184089632769"],
+    "owner": "219270060936527873",
+    "invitelink": "https://discordapp.com/oauth2/authorize?client_id=314979204477353986&scope=bot",
+    "botid": "258162570622533635",
+    "defaultgame": "with the heart of the enemy",
+    "prefix": "d-",
+    "portListen": "80",
+    "notificationChannel": "298309159559102465",
+    "notificationMessage": "**ubuntu-commie-1 is Active**",
+    "defaultTimezone": "America/Los_Angeles",
+    "targetChannel": "298309159559102465",
+    "ownerServer": "254496813552238594",
+    "roleNames": ["General"]
+}
