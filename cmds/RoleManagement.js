@@ -18,6 +18,32 @@ class RoleManagement {
         });
     }
 
+    leaveAllRoles(msg, roleNames) {
+        for (var x = 0; x < roleNames.length; x++) {
+            this.getRoleId(msg, roleNames[x].toLowerCase(), (roleId) => {
+                msg.channel.guild.removeMemberRole(msg.author.id, roleId);
+            });
+        }
+    }
+
+    leaveRole(msg, roleName, callback) {
+        this.getAvailableRoles(msg.channel.guild.id, (roleNames) => {
+            if (roleName == "all") {
+                this.leaveAllRoles(msg, roleNames);
+                callback(true);
+            } else {
+                roleNames.forEach((name, index, array) => {
+                    if (name.toLowerCase() == roleName) {
+                        this.getRoleId(msg, roleName, (roleId) => {
+                            msg.channel.guild.removeMemberRole(msg.author.id, roleId);
+                            callback(true);
+                        });
+                    }
+                });
+            }
+        });
+    }
+
     getRoleId(msg, comparison, callback) {
         msg.channel.guild.roles.forEach((curr, index, values) => {
             if (curr.name.toLowerCase() == comparison) {

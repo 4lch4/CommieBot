@@ -29,7 +29,7 @@ redisClient.on('connect', () => {
 // ========================== Exile Command ===================================================== //
 bot.registerCommand('exile', (msg, args) => {
     if (msg.mentions.length == 1) {
-        
+
     } else {
         return 'Invalid mentions, please only mention one member of the server.';
     }
@@ -67,13 +67,32 @@ bot.registerCommand('joinr', (msg, args) => {
         roleManager.joinRole(msg, comparison, (added) => {
             if (added) {
                 bot.createMessage(msg.channel.id, "You've successfuly been added to the requested role(s)!");
-                msg.delete("Joined role successfully.");
+                msg.delete("Joined role successfully at user request.");
             }
         });
     }
 }, {
     description: 'Places you into the requested server role.',
     fullDescription: 'Server admins are able to add select roles to the bot so that anyone can join the role with this command.'
+});
+
+// ========================== Leave Role Command ================================================ //
+bot.registerCommand('leaver', (msg, args) => {
+    let comparison = tools.concatArgs(args);
+
+    if (msg.channel.guild != null) {
+        let userId = msg.author.id;
+
+        roleManager.leaveRole(msg, comparison, (removed) => {
+            if (removed) {
+                bot.createMessage(msg.channel.id, "You've successfully been removed from the requested role(s)!");
+                msg.delete("Role removed successfully at user request.");
+            }
+        });
+    }
+}, {
+    description: 'Leave a role.',
+    fullDescription: 'Used to leave a specific role, usually to also leave an associated channel.'
 });
 
 // ========================== Add Role Command ================================================== //
