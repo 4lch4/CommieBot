@@ -6,9 +6,9 @@
   "author": "Alcha",
   "license": "GPL-3.0",
   "dependencies": {
-      "eris": "^0.7.0",
+      "eris": "^0.8.6",
       "moment-timezone": "~0.5.13",
-      "redis": "~2.7.1",
+      "redis": "~2.8.0",
       "chance": "~1.0.8"
   },
   "scripts": {
